@@ -1,0 +1,821 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Daryll | Web Developer</title>
+
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        background: #0a0a0a;
+        color: #f5f5f5;
+        line-height: 1.6;
+      }
+
+      html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 90px;
+      }
+
+      .container {
+        width: min(1100px, calc(100% - 40px));
+        margin: 0 auto;
+      }
+
+      header {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        padding: 22px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        background: rgba(10, 10, 10, 0.92);
+        backdrop-filter: blur(12px);
+      }
+
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        font-family: Arial, sans-serif;
+        font-size: 1rem;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: #4da3ff;
+      }
+
+      nav a {
+        position: relative;
+        color: #999;
+        text-decoration: none;
+        margin-left: 30px;
+        font-size: 0.75rem;
+        font-weight: 600;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        transition: color 0.2s ease;
+      }
+
+      nav a::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -7px;
+        width: 0;
+        height: 1px;
+        background: #4da3ff;
+        transition: width 0.2s ease;
+      }
+
+      nav a:hover {
+        color: #f5f5f5;
+      }
+
+      nav a:hover::after {
+        width: 100%;
+      }
+
+      .hero {
+        min-height: 78vh;
+        display: flex;
+        align-items: center;
+        position: relative;
+        overflow: hidden;
+        background: radial-gradient(
+          circle at 75% 45%,
+          rgba(77, 163, 255, 0.08),
+          transparent 35%
+        );
+      }
+      .hero-number {
+        position: absolute;
+        right: 5%;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: clamp(12rem, 25vw, 24rem);
+        font-weight: 700;
+        line-height: 1;
+        color: rgba(255, 255, 255, 0.025);
+        letter-spacing: -0.08em;
+        pointer-events: none;
+        user-select: none;
+      }
+
+      .hero-content {
+        max-width: 750px;
+        animation: heroReveal 0.8s ease-out both;
+      }
+
+      @keyframes heroReveal {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .eyebrow {
+        color: #4da3ff;
+        font-size: 0.7rem;
+        font-weight: 600;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        margin-bottom: 24px;
+      }
+
+      h1 {
+        font-family: Arial, sans-serif;
+        font-size: clamp(3.5rem, 8vw, 7rem);
+        font-weight: 700;
+        line-height: 0.95;
+        letter-spacing: -0.06em;
+        margin-bottom: 30px;
+      }
+
+      .hero p {
+        max-width: 560px;
+        color: #a1a1a1;
+        font-size: 1rem;
+        line-height: 1.8;
+      }
+
+      .button {
+        display: inline-block;
+        margin-top: 35px;
+        padding: 14px 26px;
+        background: #4da3ff;
+        border: 1px solid #4da3ff;
+        color: #050505;
+        text-decoration: none;
+        font-size: 0.75rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        transition: 0.2s ease;
+      }
+
+      .button:hover {
+        background: transparent;
+        color: #4da3ff;
+      }
+
+      .projects {
+        padding: 140px 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        background: #0d0d0d;
+      }
+
+      .section-label {
+        color: #4da3ff;
+        font-size: 0.7rem;
+        font-weight: 600;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        margin-bottom: 25px;
+      }
+
+      .projects h2 {
+        max-width: 700px;
+        font-size: clamp(2.5rem, 5vw, 4.5rem);
+        line-height: 1;
+        letter-spacing: -0.05em;
+        margin-bottom: 70px;
+      }
+
+      .project-card {
+        position: relative;
+        display: grid;
+        grid-template-columns: 320px 1fr;
+        gap: 40px;
+        padding: 45px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        background: #101010;
+        transition:
+          border-color 0.3s ease,
+          transform 0.3s ease;
+      }
+
+      .project-card:hover {
+        border-color: rgba(77, 163, 255, 0.5);
+        transform: translateY(-4px);
+      }
+
+      .project-visual {
+        min-height: 260px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(135deg, #181818, #0d0d0d);
+        border: 1px solid rgba(255, 255, 255, 0.06);
+        overflow: hidden;
+        transition: transform 0.4s ease;
+      }
+
+      .project-card:hover .project-visual {
+        transform: scale(1.02);
+      }
+
+      .project-visual span {
+        font-family: Georgia, serif;
+        font-size: 4rem;
+        color: rgba(255, 255, 255, 0.08);
+        letter-spacing: 0.08em;
+        transition:
+          transform 0.4s ease,
+          color 0.4s ease;
+      }
+
+      .project-card:hover .project-visual span {
+        transform: scale(1.1);
+        color: rgba(77, 163, 255, 0.25);
+      }
+
+      .project-number {
+        color: #4da3ff;
+        font-size: 0.75rem;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+      }
+
+      .project-type {
+        color: #777;
+        font-size: 0.7rem;
+        font-weight: 600;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        margin-bottom: 15px;
+      }
+
+      .project-info h3 {
+        font-size: clamp(2rem, 4vw, 3.5rem);
+        letter-spacing: -0.04em;
+        margin-bottom: 20px;
+      }
+
+      .project-status {
+        display: inline-block;
+        margin-bottom: 20px;
+        color: #4da3ff;
+        font-size: 0.65rem;
+        font-weight: 600;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+
+      .project-info p {
+        max-width: 650px;
+        color: #999;
+        font-size: 0.95rem;
+        line-height: 1.8;
+        margin-bottom: 30px;
+      }
+
+      .project-features {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-bottom: 30px;
+      }
+
+      .project-features span {
+        padding: 7px 10px;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        color: #777;
+        font-size: 0.65rem;
+        letter-spacing: 0.05em;
+      }
+
+      .project-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 12px 0;
+        color: #f5f5f5;
+        text-decoration: none;
+        font-size: 0.75rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        transition:
+          color 0.2s ease,
+          gap 0.2s ease;
+      }
+
+      .project-link:hover {
+        color: #4da3ff;
+        gap: 16px;
+      }
+
+      .project-coming {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+        margin-top: 20px;
+        padding: 30px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      }
+
+      .project-coming > span {
+        color: #4da3ff;
+        font-size: 0.7rem;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+      }
+
+      .project-coming-label {
+        color: #777;
+        font-size: 0.65rem;
+        font-weight: 600;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        margin-bottom: 5px;
+      }
+
+      .project-coming p {
+        color: #555;
+        font-size: 0.85rem;
+      }
+
+      .about {
+        padding: 140px 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        background: #0a0a0a;
+      }
+
+      .services {
+        padding: 140px 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        background: #0a0a0a;
+      }
+
+      .services h2 {
+        max-width: 700px;
+        font-size: clamp(2.5rem, 5vw, 4.5rem);
+        line-height: 1;
+        letter-spacing: -0.05em;
+        margin-bottom: 70px;
+      }
+
+      .services-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1px;
+        background: rgba(255, 255, 255, 0.08);
+      }
+
+      .service {
+        min-height: 300px;
+        padding: 40px;
+        background: #101010;
+        transition:
+          background 0.3s ease,
+          transform 0.3s ease;
+      }
+
+      .service:hover {
+        background: #151515;
+        transform: translateY(-4px);
+      }
+
+      .service > span {
+        color: #4da3ff;
+        font-size: 0.7rem;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+      }
+
+      .service h3 {
+        margin-top: 80px;
+        margin-bottom: 15px;
+        font-size: 1.3rem;
+        letter-spacing: -0.02em;
+      }
+
+      .service p {
+        color: #888;
+        font-size: 0.85rem;
+        line-height: 1.8;
+      }
+
+      .about-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 100px;
+        align-items: start;
+      }
+
+      .about h2 {
+        max-width: 520px;
+        font-size: clamp(2.5rem, 5vw, 4rem);
+        line-height: 1;
+        letter-spacing: -0.05em;
+      }
+
+      .about-index {
+        margin-top: 30px;
+        color: #555;
+        font-size: 0.7rem;
+        font-weight: 600;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .about-text {
+        padding-top: 45px;
+      }
+
+      .about-text p {
+        color: #999;
+        font-size: 1rem;
+        line-height: 1.9;
+        margin-bottom: 25px;
+      }
+
+      .skills {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 35px;
+      }
+
+      .contact {
+        padding: 160px 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        background: #0d0d0d;
+      }
+
+      .contact h2 {
+        font-size: clamp(3rem, 7vw, 6rem);
+        line-height: 0.95;
+        letter-spacing: -0.06em;
+        margin-bottom: 30px;
+        max-width: 800px;
+        font-weight: 700;
+      }
+
+      .contact p {
+        max-width: 500px;
+        color: #999;
+        font-size: 1rem;
+        line-height: 1.8;
+      }
+
+      .contact-button {
+        display: inline-block;
+        margin-top: 35px;
+        padding: 14px 26px;
+        border: 1px solid #4da3ff;
+        color: #4da3ff;
+        text-decoration: none;
+        font-size: 0.75rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        transition:
+          background 0.2s ease,
+          color 0.2s ease;
+      }
+
+      .contact-button:hover {
+        background: #4da3ff;
+        color: #050505;
+      }
+
+      .skills span {
+        padding: 9px 13px;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        color: #aaa;
+        font-size: 0.7rem;
+        font-weight: 600;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      @media (max-width: 900px) {
+        .services-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+
+        .service:last-child {
+          grid-column: span 2;
+        }
+
+        .about-grid {
+          gap: 50px;
+        }
+
+        .project-card {
+          grid-template-columns: 240px 1fr;
+        }
+      }
+
+      @media (max-width: 700px) {
+        nav a {
+          margin-left: 12px;
+          font-size: 0.68rem;
+        }
+
+        nav {
+          flex-wrap: wrap;
+          gap: 15px;
+        }
+
+        .project-card {
+          grid-template-columns: 1fr;
+          gap: 25px;
+          padding: 30px;
+        }
+
+        .hero {
+          min-height: 78vh;
+          display: flex;
+          align-items: center;
+          position: relative;
+          overflow: hidden;
+          background: radial-gradient(
+            circle at 75% 45%,
+            rgba(77, 163, 255, 0.08),
+            transparent 35%
+          );
+        }
+
+        .about-grid {
+          grid-template-columns: 1fr;
+          gap: 30px;
+        }
+
+        .about-text {
+          padding-top: 0;
+        }
+
+        .hero-number {
+          right: 2%;
+          font-size: 12rem;
+        }
+
+        .projects,
+        .about {
+          padding: 80px 0;
+        }
+
+        .contact {
+          padding: 90px 0;
+        }
+
+        .projects h2 {
+          margin-bottom: 45px;
+        }
+
+        .contact h2 {
+          font-size: clamp(3rem, 15vw, 5rem);
+        }
+
+        .services {
+          padding: 80px 0;
+        }
+
+        .services-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .service {
+          min-height: auto;
+        }
+
+        .service h3 {
+          margin-top: 50px;
+        }
+
+        .footer-content {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+      }
+
+      footer {
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        padding: 30px 0;
+      }
+
+      .footer-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+      }
+
+      .footer-name {
+        font-size: 0.75rem;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+
+      .footer-copy {
+        color: #666;
+        font-size: 0.7rem;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <nav>
+          <div class="logo">Daryll Macahilig</div>
+
+          <div>
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-number">01</div>
+
+        <div class="container">
+          <div class="hero-content">
+            <div class="eyebrow">Web Developer</div>
+
+            <h1>
+              I build digital<br />
+              experiences.
+            </h1>
+
+            <p>
+              I design and develop modern websites that combine thoughtful
+              design, responsive interfaces, and reliable functionality.
+            </p>
+
+            <a href="#projects" class="button"> View My Work </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="projects" id="projects">
+        <div class="container">
+          <div class="section-label">Selected Work</div>
+
+          <h2>Projects that solve<br />real problems.</h2>
+
+          <div class="project-card">
+            <div class="project-visual">
+              <span>MN</span>
+            </div>
+
+            <div class="project-info">
+              <div class="project-type">PHP • MySQL • HTML • CSS</div>
+
+              <h3>Maison Noir</h3>
+
+              <div class="project-status">Completed Project</div>
+
+              <p>
+                A full-stack restaurant reservation system built from the ground
+                up. Customers can submit reservations, while the admin dashboard
+                allows reservations to be reviewed, filtered, confirmed, or
+                cancelled with automated email notifications.
+              </p>
+
+              <div class="project-features">
+                <span>Reservation System</span>
+                <span>Admin Dashboard</span>
+                <span>Email Notifications</span>
+                <span>MySQL Database</span>
+              </div>
+
+              <a href="http://localhost/mason_noir/" class="project-link">
+                View Project →
+              </a>
+            </div>
+          </div>
+
+          <div class="project-coming">
+            <span>02</span>
+
+            <div>
+              <div class="project-coming-label">More Work</div>
+
+              <p>New projects and experiments coming soon.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="services">
+        <div class="container">
+          <div class="section-label">What I Do</div>
+
+          <h2>
+            Digital solutions<br />
+            built with purpose.
+          </h2>
+
+          <div class="services-grid">
+            <div class="service">
+              <span>01</span>
+
+              <h3>Web Development</h3>
+
+              <p>
+                Responsive and functional websites built around your business or
+                personal brand.
+              </p>
+            </div>
+
+            <div class="service">
+              <span>02</span>
+
+              <h3>UI & Web Design</h3>
+
+              <p>
+                Clean, modern interfaces designed to make your website easy to
+                use and memorable.
+              </p>
+            </div>
+
+            <div class="service">
+              <span>03</span>
+
+              <h3>Custom Systems</h3>
+
+              <p>
+                Practical web systems such as dashboards, reservation platforms,
+                and database-driven applications.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="about" id="about">
+        <div class="container">
+          <div class="about-grid">
+            <div>
+              <div class="section-label">About Me</div>
+
+              <h2>Building digital experiences that feel intentional.</h2>
+            </div>
+
+            <div class="about-text">
+              <p>
+                I build websites for businesses, personal brands, and creative
+                projects that want a strong presence on the web.
+              </p>
+
+              <p>
+                My approach combines clean visual design with practical
+                development, creating websites that are responsive, easy to use,
+                and built with purpose.
+              </p>
+
+              <div class="skills">
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>JavaScript</span>
+                <span>PHP</span>
+                <span>MySQL</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="contact" id="contact">
+        <div class="container">
+          <div class="section-label">Get In Touch</div>
+
+          <h2>
+            Have a project<br />
+            in mind?
+          </h2>
+
+          <p>
+            I'm available for freelance projects, website development, and
+            creative digital work.
+          </p>
+
+          <a href="mailto:macahiligddt@gmail.com" class="contact-button">
+            Email Me →
+          </a>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
