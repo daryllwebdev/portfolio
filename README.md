@@ -82,6 +82,7 @@ Email Notification
 **[🍽️ Visit Mason Noir Website](https://maisonnoir.site.je/?i=1)**
 
 **[🔐 View Admin Dashboard Demo](https://maisonnoir.site.je/ADMIN/login.php)**
+Username: admin ||  Password: admin123
 
 > The live website showcases the customer-facing experience. The project also includes a protected administrative dashboard and backend reservation system.
 
