@@ -1,30 +1,18 @@
 # 👋 Hi, I'm Daryll Dave Macahilig
 
-### Junior Web / Full-Stack Developer | Multimedia Arts Graduate
+### Junior Web Developer | Full-Stack Development
 
-I'm a **fresh graduate and junior web developer** focused on building practical, database-driven web applications.
+I'm a **fresh Multimedia Arts graduate and junior web developer** focused on building practical, database-driven web applications.
 
-I enjoy turning ideas and UI designs into functional applications—from the frontend interface and backend logic to database operations, authentication, and real-world workflows.
+I enjoy turning ideas into functional websites and applications—from designing the interface to implementing backend logic, databases, authentication, and real-world workflows.
 
-I'm currently expanding my skills into modern JavaScript development, particularly **React, Next.js, TypeScript, and Tailwind CSS**.
-
----
-
-## 🚀 What I Build
-
-* 🌐 Responsive web applications
-* 🗄️ Database-driven systems
-* 🔐 Authentication and admin dashboards
-* 📋 Reservation and management systems
-* 📧 Email notification workflows
-* 🔌 Backend logic and API integrations
-* 🎨 UI-focused web interfaces
+I'm currently expanding my skills into modern web development with **React, Next.js, TypeScript, and Tailwind CSS**.
 
 ---
 
 ## 🛠️ Tech Stack
 
-### Currently Working With
+### Web Development
 
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat\&logo=html5\&logoColor=white)
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat\&logo=css3\&logoColor=white)
@@ -49,26 +37,27 @@ I'm currently expanding my skills into modern JavaScript development, particular
 
 ## 🍽️ Mason Noir — Restaurant Reservation System
 
-A full-stack restaurant reservation platform built to handle the complete reservation workflow—from customer booking to administrative management and email notifications.
+A full-stack restaurant reservation system built to manage the reservation process from customer booking to administrative management and email notifications.
 
 **Tech:** `PHP` `MySQL/MariaDB` `HTML` `CSS` `JavaScript` `PHPMailer`
 
 ### What I Built
 
-* Designed and developed the reservation interface
-* Built PHP backend logic for processing reservations
-* Designed and implemented the SQL database structure
-* Created an admin dashboard for reservation management
-* Implemented session-based administrator authentication
+* Designed and developed the customer-facing restaurant website
+* Built the reservation form and booking workflow
+* Developed PHP backend logic for processing reservations
+* Implemented a MySQL/MariaDB database for reservation records
+* Created an administrative dashboard for managing reservations
+* Implemented administrator authentication and session management
 * Added reservation status management:
 
   * Pending
   * Confirmed
   * Cancelled
-* Integrated email notifications using **PHPMailer + Gmail SMTP**
-* Implemented customer information and reservation data handling
-* Debugged database, PHP, email, and application-flow issues
-* Refined the interface to create a modern, premium restaurant experience
+* Integrated email notifications using **PHPMailer and Gmail SMTP**
+* Implemented customer and reservation data handling
+* Debugged PHP, database, email, and application workflow issues
+* Designed the interface with a modern, premium restaurant aesthetic
 
 ### 🔄 Reservation Workflow
 
@@ -88,60 +77,99 @@ Reservation Status
 Email Notification
 ```
 
-### 🎯 Why I Built It
+### 🌐 Live Project
 
-I wanted to build more than a static website. Mason Noir was created as a practical full-stack project that allowed me to work with **frontend interfaces, backend processing, databases, authentication, administration, and external services** in one application.
+**[🍽️ Visit Mason Noir Website](https://maisonnoir.site.je/?i=1)**
 
-🔗 **[View Repository](YOUR_MASON_NOIR_REPOSITORY_LINK)**
-🌐 **[Live Demo](YOUR_LIVE_PROJECT_LINK)**
+**[🔐 View Admin Dashboard Demo](https://maisonnoir.site.je/ADMIN/login.php)**
+
+> The live website showcases the customer-facing experience. The project also includes a protected administrative dashboard and backend reservation system.
+
+### 💡 Project Highlights
+
+**Frontend**
+
+* Responsive restaurant website
+* Reservation interface
+* Customer input handling
+
+**Backend**
+
+* PHP server-side processing
+* Reservation management
+* Authentication and session handling
+
+**Database**
+
+* MySQL/MariaDB
+* Reservation data storage
+* CRUD operations
+
+**Integrations**
+
+* PHPMailer
+* Gmail SMTP
+* Automated reservation status emails
+
+**Administration**
+
+* Protected admin dashboard
+* Reservation status management
+* Customer reservation records
 
 ---
 
 # 🌐 Personal Portfolio
 
-A personal developer portfolio designed to showcase my projects, technical skills, and services.
+My personal developer portfolio showcasing my projects, skills, and web development work.
 
 **Tech:** `HTML` `CSS` `JavaScript` `PHP`
 
-The portfolio focuses on presenting my projects in a clean, professional interface while demonstrating my ability to build and structure a complete website.
+The portfolio was designed to present my development work and provide potential clients and employers with an overview of my capabilities.
 
-🔗 **[View Portfolio](YOUR_PORTFOLIO_LINK)**
-🔗 **[View Repository](YOUR_PORTFOLIO_REPOSITORY_LINK)**
+### 🔗 Visit My Portfolio
+
+**[💻 View Portfolio](https://daryllwebdev.github.io/portfolio/)**
 
 ---
 
-# 💡 Development Philosophy
+# 💡 How I Develop
 
-I don't want to simply make code work.
+I use AI-assisted development tools as part of my workflow, but I don't treat generated code as a black box.
 
-I want to understand **why it works**.
+I make an effort to understand the code I use, modify it to fit the project, and troubleshoot issues when something doesn't work.
 
-I use AI-assisted development tools as part of my workflow, but I make an effort to understand, review, modify, and troubleshoot the code I use rather than treating AI output as a black box.
-
-My goal is to continuously improve my fundamentals while learning modern technologies and becoming capable of taking a feature from **idea → implementation → testing → release**.
+My goal is to build strong fundamentals while continuously learning modern development practices.
 
 ---
 
 # 📚 Currently Learning
 
-I'm actively working toward expanding my full-stack development capabilities with:
+I'm currently expanding my knowledge in:
 
 * React
 * Next.js
 * TypeScript
 * Tailwind CSS
 * REST APIs
-* Modern frontend architecture
-* Testing and debugging practices
+* Modern frontend development
+* Testing and debugging
 
 ---
 
-# 📫 Let's Connect
+# 🎓 Education
 
-📧 **Email:** [macahiligddt@gmail.com](mailto:macahiligddt@gmail.com)
+**Bachelor of Arts in Multimedia Arts (BMMA)**
+STI College Santa Rosa · 2022–2026
+
+---
+
+# 📫 Contact
+
+📧 **[macahiligddt@gmail.com](mailto:macahiligddt@gmail.com)**
 
 💼 **Open to:** Junior Web Development · Full-Stack Development · Freelance Projects · Remote Opportunities
 
 ---
 
-> **Build. Learn. Break things. Fix them. Repeat.**
+> **Build. Learn. Improve.**
